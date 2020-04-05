@@ -1,5 +1,5 @@
-import React from 'react';
-import {Platform, Alert} from 'react-native';
+import React, {useState} from 'react';
+import {Platform} from 'react-native';
 
 //import {View} from 'react-native';
 
@@ -7,22 +7,29 @@ import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete'
 
 // import { Container } from './styles';
 
-export default function Search() {
+export default function Search({onLocationSelected}) {
+  const [searchFocused, setSearchFocused] = useState(false);
+
   return (
     <GooglePlacesAutocomplete
       placeholder="Para onde?"
       placeholderTextColor="#333"
-      onPress={(data, details) => {
-        console.log(data, details);
-      }}
+      onPress={onLocationSelected}
       query={{
         key: 'AIzaSyBIuZDy_cKsPTBfD2VG5XNV6Ty_SlsNlwk',
         language: 'pt',
       }}
       textInputProps={{
+        onFocus: () => {
+          setSearchFocused(true);
+        },
+        onBlur: () => {
+          setSearchFocused(false);
+        },
         autoCapitalize: 'none',
         autoCorrect: false,
       }}
+      listViewDisplayed={searchFocused}
       fetchDetails
       enablePoweredByContainer={false}
       styles={{
