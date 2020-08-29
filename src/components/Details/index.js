@@ -8,20 +8,20 @@ import {
   RequestButtonText,
 } from './styles';
 
-import uberx from '../../assets/uberx.png';
+import unisagrado from '../../assets/unisagrado.png';
 
 export default function Details() {
   return (
     <Container>
-      <TypeTitle>Popular</TypeTitle>
-      <TypeDescription>Viagens baratas para o dia a dia</TypeDescription>
+      <TypeTitle>Faculdade Unisagrado</TypeTitle>
+      <TypeDescription>Invista no seu futuro</TypeDescription>
 
-      <TypeImage source={uberx} />
-      <TypeTitle>UberX</TypeTitle>
-      <TypeDescription>R$6,00</TypeDescription>
+      <TypeImage source={unisagrado} />
+      <TypeTitle>Parcelas a partir de </TypeTitle>
+      <TypeDescription>R$350 reais</TypeDescription>
 
       <RequestButton onPress={() => {}}>
-        <RequestButtonText>SOLICITAR UBERX</RequestButtonText>
+        <RequestButtonText>SOLICITAR ORÇAMENTO</RequestButtonText>
       </RequestButton>
     </Container>
   );

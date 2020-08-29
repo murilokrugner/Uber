@@ -28,6 +28,8 @@ export const TypeDescription = styled.Text`
 
 export const TypeImage = styled.Image`
   height: 80px;
+  width: 300px;
+  border-radius: 10px;
   margin: 10px 0;
 `;
 
